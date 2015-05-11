@@ -25,7 +25,7 @@ number = ''.join(string)
 actual_number = int(number)
 
 # if current number is greater than the record, write this new number to the record
-if number > check_number:
+if actual_number > actual_check_number:
     record = open(os.path.expanduser("~/documents/uptime_record.txt"), "w")
     record.write(output)
     record.close()
