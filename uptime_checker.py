@@ -5,6 +5,11 @@ import re
 # check the current uptime
 output = sp.check_output("uptime", shell=True)
 
+# check if a current record file exists and if not, make it
+if os.path.isfile(os.path.expanduser("~/documents/uptime_record.txt")) == False:
+    record = open(os.path.expanduser("~/documents/uptime_record.txt"), "w")
+
+
 ## look at current uptime record file to check if new uptime is greater
 # find number of days in current record
 check = open(os.path.expanduser("~/documents/uptime_record.txt")).read()
