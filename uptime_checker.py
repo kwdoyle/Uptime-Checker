@@ -7,7 +7,8 @@ import re
 # check the current uptime
 output = sp.check_output("uptime", shell=True)
 
-# check if a current record file exists and if not, make it
+# check if a current record file exists and if not, make it.
+# feel free to change this directory if you want to save this file elsewhere.
 if os.path.isfile(os.path.expanduser("~/documents/uptime_record.txt")) == False:
     record = open(os.path.expanduser("~/documents/uptime_record.txt"), "w")
     record.write(output)
@@ -31,27 +32,3 @@ if actual_number > actual_check_number:
     record = open(os.path.expanduser("~/documents/uptime_record.txt"), "w")
     record.write(output)
     record.close()
-
-
-
-
-
-
-
-## all this is junk from testing but I am keeping it here for now.
-# make something for if uptime record file doesn't exist, create it
-# this line allows the use of ~
-#open(os.path.expanduser("~/documents/uptime_record.txt")).read()
-
-#record = open("uptime_record.txt", "w")
-#record.write(output)
-#record.close()
-
-# this will, for example, index the 1st character in the output file
-#open("uptime_record.txt").read()[1]
-
-# how can I check if any of the 'characters' from the output are a number?
-# here is a way. this will at least print the number of days and make it a string
-#string = re.findall("(?s)(?<=up).+?(?=days)", output)
-# then this turns the string into an integer which can be tested for > or <
-#number = ''.join(string)
