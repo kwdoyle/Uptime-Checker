@@ -25,7 +25,9 @@ actual_check_number = int(check_number)
 # find current number of days
 string = re.findall("(?s)(?<=up).+?(?=day)", output)
 number = ''.join(string)
-actual_number = int(number)
+try: actual_number = int(number)
+except ValueError:
+    actual_number = 0
 
 # if current number is greater than the record, write this new number to the record
 if actual_number > actual_check_number:
