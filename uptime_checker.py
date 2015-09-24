@@ -17,7 +17,7 @@ if os.path.isfile(os.path.expanduser("~/documents/uptime_record.txt")) == False:
 # maybe make all the rest of this an 'else' so that, if this is run for the first time, it won't re-make a file.
 ## look at current uptime record file to check if new uptime is greater
 # find number of days in current record
-check = open(os.path.expanduser("~/documents/uptime_record.txt")).read()
+check = open(os.path.expanduser("~/Documents/uptime_record.txt")).read()
 check_string = re.findall("(?s)(?<=up).+?(?=day)", check)
 check_number = ''.join(check_string)
 actual_check_number = int(check_number)
