@@ -9,8 +9,8 @@ output = sp.check_output("uptime", shell=True)
 
 # check if a current record file exists and if not, make it.
 # feel free to change this directory if you want to save this file elsewhere.
-if os.path.isfile(os.path.expanduser("~/documents/uptime_record.txt")) == False:
-    record = open(os.path.expanduser("~/documents/uptime_record.txt"), "w")
+if os.path.isfile(os.path.expanduser("~/Documents/uptime_record.txt")) == False:
+    record = open(os.path.expanduser("~/Documents/uptime_record.txt"), "w")
     record.write(output)
     record.close()
 
@@ -31,6 +31,6 @@ except ValueError:
 
 # if current number is greater than the record, write this new number to the record
 if actual_number > actual_check_number:
-    record = open(os.path.expanduser("~/documents/uptime_record.txt"), "w")
+    record = open(os.path.expanduser("~/Documents/uptime_record.txt"), "w")
     record.write(output)
     record.close()
